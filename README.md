@@ -15,4 +15,4 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-![TryHackMe Badge](https://github.com/AyGoub/AyGoub/tree/main/assets/tryhackme-badge.png)
+![TryHackMe Badge](https://github.com/AyGoub/AyGoub/tree/main/assets/AyGoub.png)
