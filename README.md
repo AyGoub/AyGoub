@@ -48,6 +48,17 @@
 
 </div>
 
+## 🏅 Certifications
+
+<div align="center">
+
+| 🏆 Certificate | 📅 Date | 🔗 Link |
+|----------------|----------|--------|
+| **Cyber Security 101** | `June 2025` | [View Certificate](https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-UIEHN9AGLM.pdf) |
+| **Pre Security** | `February 2025` | [View Certificate](https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-2VA9D29GVH.pdf) |
+
+</div>
+
 ---
 
 ## 📊 GitHub Statistics
