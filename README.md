@@ -146,10 +146,10 @@ Cybersecurity        ████░░░░░░░░░░░░░░░�
 
 | 🎖️ Goal | 📅 Deadline | 🎯 Status |
 |----------|-------------|-----------|
-| **Complete TryHackMe Beginner Path** | `December 2024` | `🔄 In Progress` |
-| **Master C/Java Fundamentals** | `End of S1` | `🔄 In Progress` |
-| **Build a Full-Stack Web App** | `June 2025` | `📋 Planned` |
-| **Get a Cybersecurity Certification** | `Summer 2025` | `📋 Goal` |
+| **Complete TryHackMe Beginner Path** | `December 2024` | `Done` |
+| **Master C/Java Fundamentals** | `End of S1` | `Done` |
+| **Build a Full-Stack Web App** | `June 2025` | `Done ` |
+| **Get a Cybersecurity Certification** | `Summer 2025` | `🔄 In Progress` |
 | **Contribute to Open Source Project** | `2025` | `💭 Upcoming` |
 
 </div>
