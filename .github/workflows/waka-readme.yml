@@ -1,7 +1,132 @@
+
+image.png
+
+# 👋 Hi there, I'm Ayoub Goubraim ## 🛡️ Cybersecurity & Software Engineering Student | ENSICAEN <div align="center"> [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=00D4FF&center=true&vCenter=true&width=600&lines=🎓+Engineering+Student+ENSICAEN;🔐+Cyb
+
+pasted
+
+name: Waka Readme  on:   schedule:     - cron: '30 18 * * *'   workflow_dispatch:   push:     branches: [ main ]  jobs:   update-readme:     name: WakaReadme DevMetrics     runs-on: ubuntu-latest     timeout-minutes: 10          # ✅ IMPORTANT: Permissions explicites     permissions:       contents: write      steps:       - name: WakaReadme DevMetrics         uses: anmol098/waka-readme-stats@master         with:           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}           SHOW_PROJECTS: "False"           SHOW_LINES_OF_CODE: "True"           SHOW_LANGUAGE_PER_REPO: "True"           SHOW_SHORT_INFO: "True"           SHOW_LOC_CHART: "False" j'ai une erreur de workflow
+
+Modifier
+Je vois que votre workflow GitHub Actions échoue. Voici les étapes pour diagnostiquer et corriger le problème :
+
+
+Workflow Waka Readme Corrigé
+Code 
+🔧 Étapes pour corriger le problème :
+1. Vérifiez vos secrets GitHub
+Allez dans Settings > Secrets and variables > Actions de votre repo et vérifiez :
+
+WAKATIME_API_KEY : Votre clé API WakaTime
+GH_TOKEN : Token GitHub avec les permissions appropriées
+2. Créez le token GitHub si nécessaire
+Allez sur Settings > Developer settings > Personal access tokens > Tokens (classic)
+Générez un nouveau token avec ces permissions :
+repo (accès complet)
+workflow
+write:packages
+3. Configurez WakaTime si pas encore fait
+Créez un compte sur WakaTime
+Installez l'extension WakaTime dans votre IDE
+Récupérez votre API key dans les paramètres
+4. Ajoutez les commentaires dans votre README
+Ajoutez ces marqueurs dans votre README.md à l'endroit où vous voulez voir les stats :
+
+markdown
+### 📈 Weekly Activity Overview
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+5. Problèmes courants et solutions
+
+Guide de Dépannage Waka Readme
+Document 
+6. Configuration minimale pour tester
+Si le problème persiste, essayez d'abord cette version minimale :
+
+
+Workflow Minimal pour Test
+Code 
+🚀 Actions Immédiates :
+Remplacez votre workflow actuel par la version corrigée
+Vérifiez vos secrets dans les paramètres du repo
+Testez avec la version minimale d'abord
+Ajoutez les marqueurs dans votre README si pas encore fait
+Le problème principal semble être lié aux permissions ou à la configuration des secrets. Une fois ces éléments vérifiés, le workflow devrait fonctionner correctement !
+
+
+
+
+
+image.png
+j'ai que ca comme token
+
+Modifier
+Je vois que vous n'avez que le WAKATIME_API_KEY. Il vous manque le token GitHub (GH_TOKEN) qui est essentiel pour que le workflow fonctionne.
+
+🔧 Étapes pour créer le token GitHub manquant :
+1. Créer un Personal Access Token
+Allez sur GitHub.com → Cliquez sur votre avatar (en haut à droite)
+Settings → Developer settings (en bas à gauche)
+Personal access tokens → Tokens (classic)
+Cliquez sur Generate new token → Generate new token (classic)
+2. Configuration du token
+Note/Description : Waka Readme Stats
+
+Expiration : Choisissez No expiration ou 1 year
+
+Permissions requises (cochez ces cases) :
+
+✅ repo (Full control of private repositories)
+repo:status
+repo_deployment
+public_repo
+repo:invite
+security_events
+✅ workflow (Update GitHub Action workflows)
+✅ write:packages (Upload packages to GitHub Package Registry)
+3. Copier le token
+Cliquez sur Generate token
+⚠️ IMPORTANT : Copiez immédiatement le token (il ne sera plus visible après)
+4. Ajouter le token à votre repo
+Retournez dans votre repo → Settings → Secrets and variables → Actions
+
+Cliquez sur New repository secret :
+
+Name : GH_TOKEN
+Secret : Collez le token que vous venez de créer
+5. Workflow corrigé
+
+Workflow Waka Readme Corrigé
+Code ∙ Version 2 
+6. Vérification finale
+Après avoir ajouté le GH_TOKEN, vous devriez avoir ces 2 secrets :
+
+Repository secrets
+├── WAKATIME_API_KEY ✅
+└── GH_TOKEN ✅ (nouveau)
+7. Test du workflow
+Commitez le nouveau workflow dans votre repo
+Allez dans Actions → Waka Readme → Run workflow
+Le workflow devrait maintenant s'exécuter sans erreur
+🚨 Points importants :
+Ne partagez jamais votre Personal Access Token
+Le token doit avoir les permissions repo et workflow minimum
+Si vous utilisez un token existant, vérifiez qu'il a les bonnes permissions
+Le token peut expirer, pensez à le renouveler si nécessaire
+Une fois le GH_TOKEN ajouté, votre workflow devrait fonctionner parfaitement ! 🎉
+
+
+
+
+
+
+
+
 name: Waka Readme
 
 on:
   schedule:
+    # Exécute tous les jours à 18:30 UTC
     - cron: '30 18 * * *'
   workflow_dispatch:
   push:
@@ -13,18 +138,33 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     
-    # ✅ IMPORTANT: Permissions explicites
+    # Permissions nécessaires
     permissions:
       contents: write
-
+      actions: read
+      metadata: read
+    
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
       - name: WakaReadme DevMetrics
         uses: anmol098/waka-readme-stats@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          USERNAME: AyGoub
           SHOW_PROJECTS: "False"
           SHOW_LINES_OF_CODE: "True"
           SHOW_LANGUAGE_PER_REPO: "True"
           SHOW_SHORT_INFO: "True"
           SHOW_LOC_CHART: "False"
+          SHOW_PROFILE_VIEWS: "False"
+          SHOW_DAYS_OF_WEEK: "True"
+          SHOW_TIMEZONE: "True"
+          SHOW_EDITORS: "True"
+          SHOW_LANGUAGE: "True"
+          SHOW_OS: "True"
+          SHOW_COMMIT: "True"
