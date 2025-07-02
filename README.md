@@ -50,7 +50,8 @@ Started my cybersecurity journey in 2024 with a passion for ethical hacking and 
 
 ## 🏆 TryHackMe Progress
 
-[![TryHackMe](https://tryhackme-badges.s3.amazonaws.com/AyGoub.png)](https://tryhackme.com/p/AyGoub)
+[![TryHackMe](https://github.com/AyGoub/AyGoub/raw/main/assets/thm_badge.png)](https://tryhackme.com/p/AyGoub)
+
 
 <!-- Progress Bars -->
 **🎯 Learning Progress:**
@@ -78,7 +79,7 @@ Total Points       ████████████████████�
 |----------------|----------|----------|----------------|
 | **Cyber Security 101** | `June 2025` | `Beginner` | [🔍 View](https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-UIEHN9AGLM.pdf) |
 | **Pre Security** | `February 2025` | `Foundation` | [🔍 View](https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-2VA9D29GVH.pdf) |
-| **CompTIA Security+** | `In Progress` | `Professional` | `🎯 Target: Aug 2025` |
+| **Jr Penetration Tester** | `In Progress` | `Professional` | `🎯 Target: Aug 2025` |
 
 </div>
 

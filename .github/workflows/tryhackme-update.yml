@@ -1,0 +1,79 @@
+name: Update TryHackMe Stats
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 pillow
+          
+      - name: Update TryHackMe Stats
+        run: |
+          python3 << 'EOF'
+          import requests
+          import json
+          import os
+          from datetime import datetime
+          
+          # Your TryHackMe username
+          username = "AyGoub"
+          badge_url = f"https://tryhackme-badges.s3.amazonaws.com/{username}.png"
+          
+          # Create assets directory
+          os.makedirs('assets', exist_ok=True)
+          
+          try:
+              # Download the latest badge
+              response = requests.get(badge_url, timeout=30)
+              response.raise_for_status()
+              
+              # Save the badge
+              with open('assets/thm_badge.png', 'wb') as f:
+                  f.write(response.content)
+              
+              print(f"✅ Badge updated successfully at {datetime.now()}")
+              print(f"Badge size: {len(response.content)} bytes")
+              
+              # Optional: Create a stats file
+              stats = {
+                  "last_updated": datetime.now().isoformat(),
+                  "username": username,
+                  "badge_size": len(response.content)
+              }
+              
+              with open('assets/thm_stats.json', 'w') as f:
+                  json.dump(stats, f, indent=2)
+                  
+          except Exception as e:
+              print(f"❌ Error updating badge: {e}")
+              exit(1)
+          EOF
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "TryHackMe Badge Bot"
+          
+          if [[ -n $(git status --porcelain) ]]; then
+            git add assets/
+            git commit -m "🔄 Auto-update TryHackMe badge [$(date '+%Y-%m-%d %H:%M')]"
+            git push
+            echo "✅ Badge updated and committed!"
+          else
+            echo "ℹ️ No changes to commit"
+          fi
