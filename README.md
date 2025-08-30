@@ -347,13 +347,13 @@ graph LR
 
 ### 📈 Weekly Activity Overview
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-0%20secs-blue)
-
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-277.9%20thousand%20lines%20of%20code-blue)
 
 **🐱 My GitHub Data** 
 
 > 📦 ? Used in GitHub's Storage 
+ > 
+> 🏆 41 Contributions in the Year 2025
  > 
 > 🚫 Not Opted to Hire
  > 
@@ -410,7 +410,7 @@ Python                   1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 29/08/2025 18:46:18 UTC
+ Last Updated on 30/08/2025 18:44:18 UTC
 <!--END_SECTION:waka-->
 
 ### 🔥 Recent Achievements
