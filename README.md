@@ -355,6 +355,8 @@ graph LR
 
 > 📦 ? Used in GitHub's Storage 
  > 
+> 🏆 41 Contributions in the Year 2025
+ > 
 > 🚫 Not Opted to Hire
  > 
 > 📜 11 Public Repositories 
@@ -410,7 +412,7 @@ Python                   1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 13/09/2025 18:42:29 UTC
+ Last Updated on 14/09/2025 18:42:22 UTC
 <!--END_SECTION:waka-->
 
 ### 🔥 Recent Achievements
