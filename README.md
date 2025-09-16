@@ -347,8 +347,6 @@ graph LR
 
 ### 📈 Weekly Activity Overview
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-0%20secs-blue)
-
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-277.9%20thousand%20lines%20of%20code-blue)
 
 **🐱 My GitHub Data** 
@@ -363,42 +361,6 @@ graph LR
  > 
 > 🔑 0 Private Repositories 
  > 
-**I'm an Early 🐤** 
-
-```text
-🌞 Morning                24 commits          ██████░░░░░░░░░░░░░░░░░░░   24.00 % 
-🌆 Daytime                33 commits          ████████░░░░░░░░░░░░░░░░░   33.00 % 
-🌃 Evening                16 commits          ████░░░░░░░░░░░░░░░░░░░░░   16.00 % 
-🌙 Night                  27 commits          ███████░░░░░░░░░░░░░░░░░░   27.00 % 
-```
-📅 **I'm Most Productive on Monday** 
-
-```text
-Monday                   24 commits          ██████░░░░░░░░░░░░░░░░░░░   24.00 % 
-Tuesday                  13 commits          ███░░░░░░░░░░░░░░░░░░░░░░   13.00 % 
-Wednesday                2 commits           ░░░░░░░░░░░░░░░░░░░░░░░░░   02.00 % 
-Thursday                 18 commits          ████░░░░░░░░░░░░░░░░░░░░░   18.00 % 
-Friday                   12 commits          ███░░░░░░░░░░░░░░░░░░░░░░   12.00 % 
-Saturday                 14 commits          ████░░░░░░░░░░░░░░░░░░░░░   14.00 % 
-Sunday                   17 commits          ████░░░░░░░░░░░░░░░░░░░░░   17.00 % 
-```
-
-
-📊 **This Week I Spent My Time On** 
-
-```text
-🕑︎ Time Zone: Europe/Paris
-
-💬 Programming Languages: 
-No Activity Tracked This Week
-
-🔥 Editors: 
-No Activity Tracked This Week
-
-💻 Operating System: 
-No Activity Tracked This Week
-```
-
 **I Mostly Code in C** 
 
 ```text
@@ -412,7 +374,7 @@ Python                   1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 15/09/2025 18:55:32 UTC
+ Last Updated on 16/09/2025 18:47:31 UTC
 <!--END_SECTION:waka-->
 
 ### 🔥 Recent Achievements
