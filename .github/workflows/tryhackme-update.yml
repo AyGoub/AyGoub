@@ -2,8 +2,8 @@ name: Refresh TryHackMe badge cache
 
 on:
   schedule:
-    - cron: "0 5 * * *"   # daily at 05:00 UTC
-  workflow_dispatch:       # allow manual run
+    - cron: "0 5 * * *"   # tous les jours à 05:00 UTC
+  workflow_dispatch:
 
 jobs:
   refresh:
@@ -14,10 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Update cache-buster
+      - name: Bump cache-buster
         run: |
           CB="$(date -u +%Y%m%d%H%M%S)"
-          sed -i "s/<!--CB-->.*$/<!--CB-->${CB}/" README.md
+          # Remplacer UNIQUEMENT le placeholder <!--CB-->
+          sed -i "s/<!--CB-->/${CB}/g" README.md
 
       - name: Commit changes
         run: |
@@ -30,4 +31,3 @@ jobs:
             git commit -m "chore: bump THM badge cache-buster ${CB}"
             git push
           fi
-      
