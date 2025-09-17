@@ -10,7 +10,7 @@ I enjoy turning curiosity into practical tools and continuously learning in the 
 <div align="center">
 
 <a href="https://tryhackme.com/p/AyGoub">
-  <img src="https://tryhackme-badges.s3.amazonaws.com/AyGoub.png?cb=<!--CB-->" alt="TryHackMe Badge"/>
+  <img src="https://tryhackme-badges.s3.amazonaws.com/AyGoub.png?cb=<!--CB-->20250917191805
 </a>
 
 </div>
