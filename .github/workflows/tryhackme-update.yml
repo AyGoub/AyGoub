@@ -5,29 +5,46 @@ on:
     - cron: "0 5 * * *"   # tous les jours à 05:00 UTC
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Checkout
+      - name: Checkout default branch
         uses: actions/checkout@v4
+        with:
+          ref: main          # ⚠️ mets "main" ou "master" selon ta branche par défaut
+          fetch-depth: 0
 
-      - name: Bump cache-buster
+      - name: Show current placeholder line (before)
+        run: |
+          echo "Searching for the badge line BEFORE replacement..."
+          grep -n "tryhackme-badges.s3.amazonaws.com/AyGoub.png" -n README.md || true
+          grep -n "<!--CB-->" -n README.md || true
+
+      - name: Replace placeholder <!--CB--> with timestamp
         run: |
           CB="$(date -u +%Y%m%d%H%M%S)"
-          # Remplacer UNIQUEMENT le placeholder <!--CB-->
-          sed -i "s/<!--CB-->/${CB}/g" README.md
+          # Remplacer uniquement <!--CB-->
+          perl -0777 -pe "s/<!--CB-->/${CB}/g" -i README.md
+          echo "Used CB=${CB}"
 
-      - name: Commit changes
+      - name: Show current placeholder line (after)
+        run: |
+          echo "Searching for the badge line AFTER replacement..."
+          grep -n "tryhackme-badges.s3.amazonaws.com/AyGoub.png" -n README.md || true
+          grep -n "<!--CB-->" -n README.md || echo "Placeholder replaced successfully."
+
+      - name: Commit changes (if any)
         run: |
           if git diff --quiet; then
-            echo "No changes."
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add README.md
-            git commit -m "chore: bump THM badge cache-buster ${CB}"
-            git push
+            echo "No changes to commit (maybe already updated)."
+            exit 0
           fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: bump THM badge cache-buster"
+          git push
