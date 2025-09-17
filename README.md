@@ -10,8 +10,9 @@ I enjoy turning curiosity into practical tools and continuously learning in the 
 <div align="center">
 
 <a href="https://tryhackme.com/p/AyGoub">
-  <img src="https://tryhackme-badges.s3.amazonaws.com/AyGoub.png?cb=20250917192248" alt="TryHackMe Badge"/>
+  <img src="./thm-badge.png" alt="TryHackMe Badge"/>
 </a>
+
 
 
 </div>
