@@ -10,8 +10,9 @@ I enjoy turning curiosity into practical tools and continuously learning in the 
 <div align="center">
 
 <a href="https://tryhackme.com/p/AyGoub">
-  <img src="https://tryhackme-badges.s3.amazonaws.com/AyGoub.png?cb=<!--CB-->20250917191814
+  <img src="https://tryhackme-badges.s3.amazonaws.com/AyGoub.png?cb=<!--CB-->" alt="TryHackMe Badge"/>
 </a>
+
 
 </div>
 
@@ -51,7 +52,7 @@ I enjoy turning curiosity into practical tools and continuously learning in the 
 
 ## 🎯 Learning Roadmap
 - 🔹 **2025 (Current):** Daily TryHackMe practice, first CTF challenges  
-- 🔹 **2026:** Finish **CompTIA Security+**,, build a personal pentesting lab, contribute to OSS security tools  
+- 🔹 **2026:** Finish **CompTIA Security+**, build a personal pentesting lab, contribute to OSS security tools  
 
 
 ---
